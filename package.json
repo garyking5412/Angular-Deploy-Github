@@ -49,12 +49,12 @@
   "main": "karma.conf.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/garyking5412/demo.git"
+    "url": "git+https://github.com/garyking5412/Angular-Deploy-Github.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/garyking5412/demo/"
+    "url": "https://garyking5412.github.io/Angular-Deploy-Github/"
   },
-  "homepage": "https://garyking5412.github.io/demo/"
+  "homepage": "https://garyking5412.github.io/Angular-Deploy-Github/"
 }
