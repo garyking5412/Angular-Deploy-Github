@@ -1,0 +1,78 @@
+<div class="wrap">
+  <div class="about-banner">
+    <div class="container">
+      <div class="about-banner-title">
+        <h1>Our Blogs</h1>
+        <h3>Home\\Blogs</h3>
+      </div>
+      <div class="about-banner-contact">
+        <ul class="about-contact-icon">
+          <li>Share us on:</li>
+          <li>
+            <a title="none" href=""><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a title="none" href=""><i class="fab fa-google-plus-square"></i></a>
+          </li>
+          <li>
+            <a title="none" href=""><i class="fab fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="blog-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="aside">
+            <div class="search">
+              <input type="text" placeholder="Seach..." id="searc">
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="categories">
+              <h2>Categories</h2>
+              <div class="category-item" *ngFor="let item of loadCate()">
+                <p>{{item.catname}}</p>
+                <p>{{item.quantity}}</p>
+              </div>
+            </div>
+            <div class="recent-post">
+              <h2>Recent Posts</h2>
+              <div class="recent-item">
+                <div class="recent-image">
+                  <img src="assets\img\1145723.png" alt="this is a picture">
+                </div>
+                <div class="recent-des">
+                  <h4><a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, esse?</a></h4>
+                  <h5><i class="far fa-clock"></i>&nbsp;date</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-12">
+          <div class="blog">
+            <div class="blog-item" *ngFor="let item of blogs">
+              <div class="item-image">
+                <img src={{item.image}} alt="đây là ảnh minh họa">
+                <button type="button" class="recipe">Recipe</button>
+              </div>
+              <div class="item-content">
+                <h3>{{item.title}}</h3>
+                <h5><i class="far fa-clock"></i>&nbsp;{{ item.date | date }}&nbsp;|&nbsp;<span><i
+                      class="far fa-comment"></i>&nbsp;
+                    Comments:&nbsp;{{item.comment}}</span></h5>
+                <p>{{item.content}}</p>
+                <div class="item-button-control">
+                  <button type="button">Read more</button>
+                  <button title="none" type="button"><i class="fas fa-share-alt"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

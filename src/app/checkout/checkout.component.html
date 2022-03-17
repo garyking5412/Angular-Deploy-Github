@@ -1,0 +1,219 @@
+<div class="wrap">
+  <div class="product-menu-slider">
+    <div class="container">
+      <div class="product-menu-title">
+        <h1>Your Cart</h1>
+        <h3>Home//Your Cart</h3>
+      </div>
+      <div class="product-menu-contact">
+        <ul class="product-menu-icon">
+          <li>Share us on:</li>
+          <li>
+            <a href="https://www.facebook.com/nhunhong.tran.338/" target="_blank"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/thai.xuan.tran/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fab fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="checkout-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="billing-details">
+            <h2>Billing Details</h2>
+            <div class="input-form">
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="input-item input-name">
+                    <p>First Name<span>*</span></p>
+                    <input type="text" id="first-name">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="input-item input-name">
+                    <p>Last Name<span>*</span></p>
+                    <input type="text" id="last-name">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="input-item input-name">
+                    <p>Email Address<span>*</span></p>
+                    <input type="email" id="email">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="input-item input-name">
+                    <p>Phone Number<span>*</span></p>
+                    <input type="number" id="phone">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="input-item input-address">
+                    <p>Address<span>*</span></p>
+                    <input type="text" id="address">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="input-item input-address">
+                    <p>Country<span>*</span></p>
+                    <div class="btn-group dropdown-menu country-list">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown"
+                        data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">{{country}}
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+                        <li *ngFor="let item of countryList"><a class="dropdown-item" href="javascript:void(0)"
+                            (click)="toString(1,item)">{{item}}</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="input-item input-address">
+                    <p>Town/City<span>*</span></p>
+                    <input type="text" id="city">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="input-item input-name">
+                    <p>State/County<span>*</span></p>
+                    <input type="text" id="state">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="input-item input-name">
+                    <p>Postal Codes<span>*</span></p>
+                    <input type="number" id="postal">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="input-item input-address">
+                    <p>Order Notes<span>*</span></p>
+                    <textarea name="" id="note" cols="20" rows="6"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shipping-method">
+            <h2>Shipping Method</h2>
+            <div class="input-form">
+              <div class="row">
+                <div class="col-12">
+                  <div class="input-item input-address">
+                    <p>Select the delivery method<span>*</span></p>
+                    <div class="btn-group dropdown-menu shipping-list">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown"
+                        data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">{{shipping}}
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+                        <li *ngFor="let item of methodList"><a class="dropdown-item" href="javascript:void(0)"
+                            (click)="toString(3,item)">{{item}}</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="payment-method">
+            <h2>Payment Method</h2>
+            <div class="input-form">
+              <div class="row">
+                <div class="col-12">
+                  <div class="input-item input-address">
+                    <p>Select the payment method<span>*</span></p>
+                    <div class="btn-group dropdown-menu payment-list">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown"
+                        data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">{{payment}}
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+                        <li *ngFor="let item of paymentList"><a class="dropdown-item" href="javascript:void(0)"
+                            (click)="toString(2,item)">{{item}}</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button *ngIf="check==false" class="btn btn-primary order" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                  </button>
+                  <button *ngIf="check" type="button" class="order" (click)="fetch()">Place Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-2 col-sm-0"></div>
+            <div class="col-md-10 col-sm-12">
+              <div class="your-order">
+                <h2>Your Order</h2>
+                <div class="cart-empty" *ngIf="carts.length==0">
+                  <h3>Seems like you have not purchased anything! <span><a href="javascript:void(0
+                  )" (click)="surf()">Check it out
+                        now!</a></span></h3>
+                </div>
+                <div class="order-list">
+                  <table [cellPadding]="4" [cellSpacing]="0">
+                    <tr *ngFor="let item of carts">
+                      <td>
+                        <div class="item-name">
+                          <h5>{{ item.product.name }}</h5>
+                          <p>{{ item.product.price | currency }}</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="item-quantity">
+                          <p [ngStyle]="{'font-family': 'Times New Roman'}"><span>X &nbsp;</span>{{ item.quantity }}</p>
+                          <!-- <p>{{}}</p> -->
+                        </div>
+                      </td>
+                      <td>
+                        <div id="button-control">
+                          <button type="button" (click)="remove(item)">
+                            <i class="fas fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <div class="sub-total">
+                    <p>Sub Total (<span>&nbsp;{{carts.length}}</span>&nbsp;items)</p>
+                    <p>{{sum()|currency}}</p>
+                  </div>
+                  <div class="sub-total">
+                    <p>Tax</p>
+                    <p>{{tax()|currency}}</p>
+                  </div>
+                  <div class="sub-total">
+                    <p>Shipping</p>
+                    <p *ngIf="carts.length!=0">{{ship|currency}}</p>
+                  </div>
+                  <div class="cart-control">
+                    <input type="text" placeholder="Enter your coupon here!">
+                  </div>
+                  <div class="order-total">
+                    <div class="sub-total">
+                      <p [ngStyle]="{'font-size': '30px','font-family':'Playfair Display','color':'#000'}">Order Total
+                      </p>
+                      <p [ngStyle]="{'font-size': '30px','font-family':'Playfair Display','color':'#c8aa7b'}">
+                        {{total()|currency}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
