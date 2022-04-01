@@ -1,14 +1,8 @@
 import { UserService } from './../user.service';
 import { LazyLoadScriptService } from './../lazy-load-script.service';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as $ from 'jquery';
-import * as bootstrap from 'bootstrap';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-header1',
@@ -105,7 +99,7 @@ export class Header1Component implements OnInit {
           console.log(res);
           sessionStorage.setItem('user', JSON.stringify(res));
           alert('login success!');
-          this.user.username='';
+          this.user.username = '';
           this.user.password = '';
         } else {
           alert('login failed!');
