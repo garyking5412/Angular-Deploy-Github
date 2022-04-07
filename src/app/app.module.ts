@@ -16,6 +16,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AuthGuardService } from './auth-guard.service';
+import { SpringBootApiComponent } from './spring-boot-api/spring-boot-api.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AuthGuardService } from './auth-guard.service';
     Footer1Component,
     NotFoundComponent,
     CheckoutComponent,
+    SpringBootApiComponent,
   ],
   imports: [
     BrowserModule,

@@ -73,6 +73,7 @@
             "production": {
               "browserTarget": "BakyaBakeryDemo:build:production"
             },
+            "proxyConfig": "src/proxy.conf.json",
             "development": {
               "browserTarget": "BakyaBakeryDemo:build:development"
             }

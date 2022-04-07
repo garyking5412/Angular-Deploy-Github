@@ -1,0 +1,12 @@
+<p>spring-boot-api works!</p>
+<h1>Spring Boot Categories List</h1>
+<div class="container">
+  <div class="col-lg-3 col-md-4 col-sm-6 item-row-block" *ngFor="let item of products">
+    <p>{{item.id}}</p>
+    <p>{{item.proName}}</p>
+  </div>
+</div>
+<input type="text" placeholder="cate name" [(ngModel)]="cate.name">
+<input type="number" placeholder="cate name" [(ngModel)]="cate.status">
+<input type="number" placeholder="cate name" [(ngModel)]="cate.parentId">
+<button type="button" (click)="add(cate)">submit</button>

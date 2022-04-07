@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from './auth-guard.service';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { BlogComponent } from './main/blog/blog.component';
+import { SpringBootApiComponent } from './spring-boot-api/spring-boot-api.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+    // canActivate: [AuthGuardService],
+  },
+  {
+    path: 'SpringBoot',
+    component: SpringBootApiComponent,
     // canActivate: [AuthGuardService],
   },
   { path: '**', component: NotFoundComponent },
