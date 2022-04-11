@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductServicesService } from './product-services.service';
 import { LazyLoadScriptService } from './lazy-load-script.service';
 import { MainModule } from './main/main.module';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,6 +17,7 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AuthGuardService } from './auth-guard.service';
 import { SpringBootApiComponent } from './spring-boot-api/spring-boot-api.component';
+import { DateConverterPipe } from './date-converter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SpringBootApiComponent } from './spring-boot-api/spring-boot-api.compon
     NotFoundComponent,
     CheckoutComponent,
     SpringBootApiComponent,
+    DateConverterPipe,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,12 @@ import { SpringBootApiComponent } from './spring-boot-api/spring-boot-api.compon
     StorageServiceModule,
     ReactiveFormsModule,
   ],
-  providers: [LazyLoadScriptService, ProductServicesService,AuthGuardService],
+  providers: [
+    LazyLoadScriptService,
+    ProductServicesService,
+    AuthGuardService,
+    DatePipe,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
